@@ -7,18 +7,18 @@
 
 
 
-# **Login and Upload**
+# **Login and Upload** - *LaU*
 
 
-#### è un semplice progetto per poter caricare i propri file in un server locale
+#### it's a simple project with login page to upload your files to a local server
 ___
 ### Feacurs:
-+ Multi user (piu utenti avranno una cartella automaticamnete creata per poter salvare i propri file)
-+ Password protected (per poter usare il servizzio si deve disporre di un account)
-+ Low Stress  (Puo essere usato anche su un raspberry pi)
-+ Offline working (nessuna dipendenza online)
++ Multi user (more users will have a folder automatically created to save their files)
++ Password protected (in order to use the service you must have an account)
++ Low Stress  (It can also be used on a raspberry pi)
++ Offline working (no online dependencies)
 + Bootstrap friendly (css and js)
-+ MySQL Friendly (user and passwod where storend in DBs)
++ MySQL Friendly (user and password are stored in DBs)
 
 <br/><br/>
 
@@ -30,7 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 
-+ [MySql](https://dev.mysql.com/doc/refman/8.0/en/ "MySQL documentation")
++ <a name="mysql"></a>[MySql](https://dev.mysql.com/doc/refman/8.0/en/ "MySQL documentation")
 + [PHP 7+](http://php.net/manual/en/install.php "PHP documentation")
 + [Apache2]( "")
 + [Knowledge](https://www.youtube.com/watch?v=YwpVDmYj8f0 "knowledge documentation")
@@ -42,12 +42,12 @@ A step by step series of examples that tell you how to get a development env run
 
 
 ```
-Modificare in php.ini la stringa: "file_uploads = Off" in "file_uploads = On"
+Change the string in php.ini: "file_uploads = Off" in "file_uploads = On"
 ```
 
-then.
+then. [(You can find how to install mysql in the documentation)](#mysql)
 ```
-Install and set up mysql. (You can find how to install mysql in the documentation)
+Install and set up mysql.
 ```
 Creating db
 ```
@@ -106,7 +106,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 * **Federico Tensi** - *Initial work* - [Habby](https://github.com/habby1337)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/habby1337/Page-to-upload-file/graphs/contributors) who participated in this project.
 
 ## License
 
