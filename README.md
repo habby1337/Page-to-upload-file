@@ -25,20 +25,20 @@ ___
 + MySQL Friendly (user and password are stored in DBs)
 
 ---
-
+<a name="mysql"></a>
 ### Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install before the software and how to install them
 
 
-+ <a name="mysql"></a>[MySql](https://dev.mysql.com/doc/refman/8.0/en/ "MySQL documentation")
-+ [PHP 7+](http://php.net/manual/en/install.php "PHP documentation")
-+ [Apache2]( "")
-+ [Knowledge](https://www.youtube.com/watch?v=YwpVDmYj8f0 "knowledge documentation")
++ [MySql](https://dev.mysql.com/doc/refman/8.0/en/ "MySQL documentation") - MySQL documentation
++ [PHP 7+](http://php.net/manual/en/install.php "PHP documentation") - PHP documentation
++ [Apache2](https://httpd.apache.org/docs/2.4/ "Apache2 documentation") - Apache2 documentation
++ [Knowledge](https://www.youtube.com/watch?v=YwpVDmYj8f0 "Knowledge documentation") - Knowledge documentation
 
 
 ### Installing
