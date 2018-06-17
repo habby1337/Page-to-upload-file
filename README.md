@@ -1,18 +1,22 @@
-[register_page]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png
+<!-- IMAGE REFER LINK START-->
+[register_page]: *LINK*
+[login_page]: *LINK*
+<!-- IMAGE REFER LINK END-->
+
 
 ![alt text][register_page]
 
-[login_page]: *LINK*
 
 
 
 
-# **Login and Upload** - *LaU*
+
+# **Login and Upload** - _**LaU**_
 
 
 #### it's a simple project with login page to upload your files to a local server
 ___
-### Feacurs:
+### Features:
 + Multi user (more users will have a folder automatically created to save their files)
 + Password protected (in order to use the service you must have an account)
 + Low Stress  (It can also be used on a raspberry pi)
