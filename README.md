@@ -83,6 +83,7 @@ then we start apache2.
 ```
 service apache2 start
 ```
+we start MySQL.
 ```
 start mysql
 ```
