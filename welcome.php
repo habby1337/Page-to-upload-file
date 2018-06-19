@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <title>DashBoard</title>
-        <?php include './include/fonts.php';?>
+        <?php include './include/links.php';?>
         <?php include './include/stylesheet.php'?>
         <style>
             h1,h2,h3{font-family: 'Nunito', sans-serif;}

@@ -13,7 +13,7 @@
 
 
     $uploadfile = $dirupload . basename($_FILES['userfile']['name']);
-     include './include/fonts.php';
+     include './include/links.php';
      include './include/stylesheet.php';
 
      if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
