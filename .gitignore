@@ -1,0 +1,5 @@
+# exclude everything
+store/*
+
+# exception to the rule
+!store/.gitkeep 

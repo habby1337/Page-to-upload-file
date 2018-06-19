@@ -19,6 +19,7 @@
         </style>
     </head>
     <body>
+        <?php include './include/header.php'; ?>
         <center>
             <h1>DASHBOARD<br /></h1>
         </center>
