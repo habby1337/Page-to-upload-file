@@ -21,13 +21,13 @@
          include './include/links.php';
          include './include/stylesheet.php';
     /*check if the file is valid and put the result in these 2 variable */
-    /*if ($_FILES['userfile']['size'] >= $maxupload) {
-        $respond = "                                            // TODO: Check if a file exeed max upload
+    if ($_FILES['userfile']['error'] >= 4) {
+        $respond = "                                            <!--// TODO: Check if a file exeed max upload-->
         <div class='alert alert-danger' role='alert'>
-        File to large! max file size: $maxupload
+        File to large! max file size:
         </div>";
         $result = "<font color='red'>not uploaded!!</font>";
-    }else{*/
+    }else{
          if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
              $respond = "
              <div class='alert alert-success' role='alert'>
@@ -41,7 +41,7 @@
              </div>";
              $result = "<font color='red'>not uploaded!!</font>";
          }
-        /* }*/
+         }
         echo "
 
          <!DOCTYPE html>

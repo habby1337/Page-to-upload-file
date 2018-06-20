@@ -29,6 +29,15 @@
             h1,h2,h3{font-family: 'Nunito', sans-serif;}
             th{font-family: 'Exo 2', sans-serif;}
             body{font-family: 'Quicksand', sans-serif;}
+            .rotate {
+            display: inline-block;/* mandatory to be able to use transform */
+            transition: 1s all;
+            color: #EF2B5C;
+            }
+            #rotazione:hover .rotate {
+            transform: rotate(180deg);
+            color:#60A561 ;
+            }
         </style>
     </head>
     <body>
@@ -53,8 +62,11 @@
                             <!-- Name of input element determines name in $_FILES array -->
                             <input name="userfile" class="btn btn-primary" type="file" />
                         <hr class="my-4">
-                        <!-- <p></p> -->
-                        <button type="submit" class="btn btn-primary btn-lg"  >Send it! </button> ?TODO sistemare l'icona
+                        <div id="rotazione">
+                            <button type="submit" class="btn btn-primary btn-lg "  >Send it!&nbsp;
+                            <span class="rotate"><a class="fas fa-thumbs-down" ></a></span>
+                            </button>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -116,7 +128,6 @@
             </div>
             <?php include "./include/foo.php" ?>
         </div>
-
     </body>
 </html>
 <?php
