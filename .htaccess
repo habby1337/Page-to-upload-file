@@ -2,27 +2,11 @@
 DirectoryIndex login.php
 
 
-
-
-
-
-
-
-
 #block access to this file
 <Files .htaccess>
 order allow,deny
 deny from all
 </Files>
-
-
-
-
-
-
-
-
-
 
 
 #remove the ".php" extension from the url
@@ -34,6 +18,3 @@ RewriteRule ^login?$ login.php [NC,L]
 RewriteRule ^welcome?$ welcome.php [NC,L]
 RewriteRule ^logout?$ logout.php [NC,L]
 RewriteRule ^allfile?$ allfile.php [NC,L]
-
-RewriteRule ^404?$ 404.php [NC,L]
-RewriteRule ^403?$ 403.php [NC,L]
