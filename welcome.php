@@ -53,14 +53,6 @@
                         <button type="submit" class="btn btn-primary btn-lg"  >Send it! </button> ?TODO sistemare l'icona
                         </form>
                     </div>
-
-
-
-
-
-
-
-
                 </div>
                 <!--Closing col-8-->
                 <div class="col-4">
