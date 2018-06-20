@@ -1,3 +1,6 @@
-<?php
-echo "<p>Copyright &copy; 2010-" . date("Y") . " federicotensi.me</p>";
-?>
+
+<footer id="footer">
+
+                        <?php echo "<p>Copyright &copy; " . date("Y") . " <a href='https://federicotensi.me'>Federico Tensi</p></a>"; ?>
+
+</footer>

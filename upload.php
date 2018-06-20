@@ -1,21 +1,15 @@
 <?php
-    /*function myUrlEncode($string) {
-        $entities = array('%21', '%2A', '%27', '%28', '%29', '%3B', '%3A', '%40', '%26', '%3D', '%2B', '%24', '%2C', '%2F', '%3F', '%25', '%23', '%5B', '%5D');
-        $replacements = array('!', '*', "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", "[", "]");
-        return str_replace($entities, $replacements, urlencode($string));
-    }*/
 
+/*chech the directory path in the url and decod it*/
     $dirupload = $_GET['user'];
     $dirupload = preg_replace("/%u([0-9a-f]{3,4})/i","&#x\\1;",urldecode($dirupload));
     $dirupload = html_entity_decode($dirupload,null,'UTF-8');
-
-
-
-
     $uploadfile = $dirupload . basename($_FILES['userfile']['name']);
+
+
      include './include/links.php';
      include './include/stylesheet.php';
-
+/*check if the file is valid and put the result in these 2 variable */
      if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
          $respond = "File is valid, and was successfully uploaded.\n";
          $result = "uploaded";
@@ -54,7 +48,7 @@
      </html>
      ";
 
-
+/*DEBUG info | you can hide this */
     echo 'Here is some more debugging info:';
     echo "<pre>";
     print_r($_FILES);

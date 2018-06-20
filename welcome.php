@@ -10,8 +10,9 @@
         exit;
     }
 
-    $userdir ='./store/' . $_SESSION['username'];
-    $name = $_SESSION['username'];
+/*declare some varible*/
+    $userdir ='./store/' . $_SESSION['username']; //used to know where to store file
+    $name = $_SESSION['username']; //used to the message "Welcome $name"
 
 
     ?>
@@ -42,7 +43,7 @@
                     <div class="jumbotron">
                         <h3 class="display-5">Welcome <?php echo "$name"; ?>.</h3>
                         <hr class="my-4">
-                        <p class="lead">
+                        <p class="lead"><!-- post in the url the directory(store/user) of the user -->
                             <?php echo '<form action="upload.php?user=', urlencode($userdir), '/" enctype="multipart/form-data"  method="post" enctype="multipart/form-data">' ?>
                             <!-- MAX_FILE_SIZE must precede the file input field -->
                             <input type="hidden" name="MAX_FILE_SIZE" value="999000" />
@@ -111,9 +112,11 @@
                 </div>
             </div>
         </div>
+        <?php include "./include/foo.php" ?>
     </body>
 </html>
 <?php
+/*Chack if the user click the button refresh and refresh the directory array*/
     if(array_key_exists('listdir',$_POST)){
         if ($handle = opendir($userdir)) {
             while (false !== ($entry = readdir($handle))) {
