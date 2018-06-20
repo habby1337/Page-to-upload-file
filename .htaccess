@@ -1,0 +1,26 @@
+
+DirectoryIndex login.php
+
+
+
+
+ErrorDocument 403 /error_page/403.php
+
+ErrorDocument 404 /error_page/404.php
+
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+Redirect 301 /index.php/team/csgo /
+
+
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^register?$ register.php [NC,L]
+RewriteRule ^login?$ login.php [NC,L]
+RewriteRule ^welcome?$ welcome.php [NC,L]
+RewriteRule ^logout?$ logout.php [NC,L]

@@ -2,8 +2,11 @@
     // Initialize the session
 
     session_start();
+
     $userdir ='./store/' . $_SESSION['username'];
     $name = $_SESSION['username'];
+
+
     ?>
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
@@ -91,7 +94,7 @@
                                     }
                                     return (count(scandir($userdir)) == 2);
                                 }
-
+                            
 
                                 ?>
                         </div>
@@ -142,7 +145,7 @@
 
         // If session variable is not set it will redirect to login page
         if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-            header("location: login.php");
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=login\">";
             exit;
         }
         ?>
