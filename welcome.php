@@ -3,6 +3,13 @@
 
     session_start();
 
+
+    // If session variable is not set it will redirect to login page
+    if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
+        echo "<meta http-equiv=\"refresh\" content=\"0; url=login\">";
+        exit;
+    }
+
     $userdir ='./store/' . $_SESSION['username'];
     $name = $_SESSION['username'];
 
@@ -46,6 +53,14 @@
                         <button type="submit" class="btn btn-primary btn-lg"  >Send it! </button> ?TODO sistemare l'icona
                         </form>
                     </div>
+
+
+
+
+
+
+
+
                 </div>
                 <!--Closing col-8-->
                 <div class="col-4">
@@ -94,7 +109,7 @@
                                     }
                                     return (count(scandir($userdir)) == 2);
                                 }
-                            
+
 
                                 ?>
                         </div>
@@ -143,9 +158,5 @@
     }
 
 
-        // If session variable is not set it will redirect to login page
-        if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-            echo "<meta http-equiv=\"refresh\" content=\"0; url=login\">";
-            exit;
-        }
+
         ?>
