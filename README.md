@@ -83,6 +83,10 @@ then we start apache2.
 ```
 service apache2 start
 ```
+we start MySQL.
+```
+start mysql
+```
 We open the browser.
 ```
 Open the browser and go to 127.0.0.1:80
