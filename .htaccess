@@ -1,22 +1,35 @@
-
+#declare the index page
 DirectoryIndex login.php
 
 
 
-
+#Just a fancy method to display error page
 ErrorDocument 403 /error_page/403.php
 
 ErrorDocument 404 /error_page/404.php
 
 
+
+
+
+#block access to this file
 <Files .htaccess>
 order allow,deny
 deny from all
 </Files>
 
+
+
+
+#block access to those directory
 Redirect 301 /index.php/team/csgo /
 
 
+
+
+
+
+#remove the ".php" extension from the url
 Options +FollowSymLinks
 RewriteEngine on
 
