@@ -83,45 +83,46 @@
                                 <br />
                             </center>
                             <?php
-                                /*Check if the directory is empty or has file */
-                                /*and if is not empty show the file inside*/
-                                    if ($handle = opendir($userdir)) {
-                                        while (false !== ($entry = readdir($handle))) {
-                                            if ($entry != "." && $entry != "..") {
-                                                echo "
-
-                                                <table class='table'>
-                                                  <tbody>
-                                                    <tr>
-                                                      <th scope='row'>$entry\n</th>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-
-
-                                                ";
-                                            } elseif (is_dir_empty($userdir)) {
-                                                echo "Empty Folder ";
-                                                exit;
+                                $countershowfile = 0; //Initialize the counter for the directory
+                                    /*Check if the directory is empty or has file */
+                                    /*and if is not empty show the file inside*/
+                                        if ($handle = opendir($userdir)) {
+                                            while (false !== ($entry = readdir($handle))) {
+                                                if ($entry != "." && $entry != "..") {
+                                                    if ($countershowfile <= 10) {
+                                                        $countershowfile++;
+                                                        echo "
+                                                        <table class='table'>
+                                                          <tbody>
+                                                            <tr>
+                                                              <th scope='row'>$entry\n</th>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                        ";
+                                                    }
+                                                } elseif (is_dir_empty($userdir)) {
+                                                    echo "Empty Folder ";
+                                                    exit;
+                                                }
                                             }
+
+
+
+
+                                            closedir($handle);
+                                        }
+                                        /*function to know if the directory has file inside*/
+                                        function is_dir_empty($userdir)
+                                        {
+                                            if (!is_readable($userdir)) {
+                                                return null;
+                                            }
+                                            return (count(scandir($userdir)) == 2);
                                         }
 
 
-
-
-                                        closedir($handle);
-                                    }
-                                    /*function to know if the directory has file inside*/
-                                    function is_dir_empty($userdir)
-                                    {
-                                        if (!is_readable($userdir)) {
-                                            return null;
-                                        }
-                                        return (count(scandir($userdir)) == 2);
-                                    }
-
-
-                                    ?>
+                                        ?>
                         </div>
                     </div>
                 </div>
