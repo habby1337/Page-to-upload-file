@@ -70,7 +70,14 @@ id int,
 username text,
 password text,
 ```
-
+Change in php.ini the max upload
+```
+post_max_size (default is 2Mb)
+```
+Change in php.ini the max files upload
+```
+max_file_uploads=20
+```
 We browse to the "www" directory
 ```
 cd /var/www/

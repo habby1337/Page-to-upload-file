@@ -10,9 +10,11 @@
         exit;
     }
 
-/*declare some varible*/
+    /*declare some varible*/
     $userdir ='./store/' . $_SESSION['username']; //used to know where to store file
     $name = $_SESSION['username']; //used to the message "Welcome $name"
+    $allowed_filetypes = array('.doc','.docx','.jpg','.jpeg','.png','.ppt','.pptx','.xls','.xlsx','.pdf','.txt','.zip','.rar'); //type of file
+    $maxupload = "999"; //max file size
 
 
     ?>
@@ -43,10 +45,11 @@
                     <div class="jumbotron">
                         <h3 class="display-5">Welcome <?php echo "$name"; ?>.</h3>
                         <hr class="my-4">
-                        <p class="lead"><!-- post in the url the directory(store/user) of the user -->
+                        <p class="lead">
+                            <!-- post in the url the directory(store/user) of the user -->
                             <?php echo '<form action="upload.php?user=', urlencode($userdir), '/" enctype="multipart/form-data"  method="post" enctype="multipart/form-data">' ?>
                             <!-- MAX_FILE_SIZE must precede the file input field -->
-                            <input type="hidden" name="MAX_FILE_SIZE" value="999000" />
+                            <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo '$maxupload'; ?>" />
                             <!-- Name of input element determines name in $_FILES array -->
                             <input name="userfile" class="btn btn-primary" type="file" />
                         <hr class="my-4">
@@ -68,92 +71,93 @@
                                 </form>
                             </center>
                             <?php
-                            /*Check if the directory is empty or has file */
-                            /*and if is not empty show the file inside*/
-                                if ($handle = opendir($userdir)) {
-                                    while (false !== ($entry = readdir($handle))) {
-                                        if ($entry != "." && $entry != "..") {
-                                            echo "
+                                /*Check if the directory is empty or has file */
+                                /*and if is not empty show the file inside*/
+                                    if ($handle = opendir($userdir)) {
+                                        while (false !== ($entry = readdir($handle))) {
+                                            if ($entry != "." && $entry != "..") {
+                                                echo "
 
-                                            <table class='table'>
-                                              <tbody>
-                                                <tr>
-                                                  <th scope='row'>$entry\n</th>
-                                                </tr>
-                                              </tbody>
-                                            </table>
+                                                <table class='table'>
+                                                  <tbody>
+                                                    <tr>
+                                                      <th scope='row'>$entry\n</th>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
 
 
-                                            ";
-                                        } elseif (is_dir_empty($userdir)) {
-                                            echo "Empty Folder ";
-                                            exit;
+                                                ";
+                                            } elseif (is_dir_empty($userdir)) {
+                                                echo "Empty Folder ";
+                                                exit;
+                                            }
                                         }
+
+
+
+
+                                        closedir($handle);
+                                    }
+                                    /*function to know if the directory has file inside*/
+                                    function is_dir_empty($userdir)
+                                    {
+                                        if (!is_readable($userdir)) {
+                                            return null;
+                                        }
+                                        return (count(scandir($userdir)) == 2);
                                     }
 
 
-
-
-                                    closedir($handle);
-                                }
-                                /*function to know if the directory has file inside*/
-                                function is_dir_empty($userdir)
-                                {
-                                    if (!is_readable($userdir)) {
-                                        return null;
-                                    }
-                                    return (count(scandir($userdir)) == 2);
-                                }
-
-
-                                ?>
+                                    ?>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php include "./include/foo.php" ?>
         </div>
-        <?php include "./include/foo.php" ?>
+
     </body>
 </html>
 <?php
-/*Chack if the user click the button refresh and refresh the directory array*/
-    if(array_key_exists('listdir',$_POST)){
-        if ($handle = opendir($userdir)) {
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != "..") {
-                    echo "
+    /*Chack if the user click the button refresh and refresh the directory array*/
+        if(array_key_exists('listdir',$_POST)){
+            if ($handle = opendir($userdir)) {
+                while (false !== ($entry = readdir($handle))) {
+                    if ($entry != "." && $entry != "..") {
+                        echo "
 
-                    <table class='table'>
-                      <tbody>
-                        <tr>
-                          <th scope='row'>$entry\n</th>
-                        </tr>
-                      </tbody>
-                    </table>
+                        <table class='table'>
+                          <tbody>
+                            <tr>
+                              <th scope='row'>$entry\n</th>
+                            </tr>
+                          </tbody>
+                        </table>
 
 
-                    ";
-                } elseif (is_dir_empty($userdir)) {
-                    echo "Empty Folder ";
-                    exit;
+                        ";
+                    } elseif (is_dir_empty($userdir)) {
+                        echo "Empty Folder ";
+                        exit;
+                    }
                 }
+
+
+
+
+                closedir($handle);
             }
 
-
-
-
-            closedir($handle);
-        }
-
-        function is_dir_empty($userdir)
-        {
-            if (!is_readable($userdir)) {
-                return null;
+            function is_dir_empty($userdir)
+            {
+                if (!is_readable($userdir)) {
+                    return null;
+                }
+                return (count(scandir($userdir)) == 2);
             }
-            return (count(scandir($userdir)) == 2);
         }
-    }
 
 
 
-        ?>
+            ?>
