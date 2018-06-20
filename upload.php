@@ -24,7 +24,7 @@
     if ($_FILES['userfile']['error'] >= 4) {
         $respond = "                                            <!--// TODO: Check if a file exeed max upload-->
         <div class='alert alert-danger' role='alert'>
-        File to large! max file size:
+        There's no file boi! <i class='far fa-frown'></i>
         </div>";
         $result = "<font color='red'>not uploaded!!</font>";
     }else{

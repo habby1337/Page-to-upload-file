@@ -3,10 +3,7 @@ DirectoryIndex login.php
 
 
 
-#Just a fancy method to display error page
-ErrorDocument 403 /error_page/403.php
 
-ErrorDocument 404 /error_page/404.php
 
 
 
@@ -21,8 +18,7 @@ deny from all
 
 
 
-#block access to those directory
-Redirect 301 /index.php/team/csgo /
+
 
 
 
@@ -37,3 +33,7 @@ RewriteRule ^register?$ register.php [NC,L]
 RewriteRule ^login?$ login.php [NC,L]
 RewriteRule ^welcome?$ welcome.php [NC,L]
 RewriteRule ^logout?$ logout.php [NC,L]
+RewriteRule ^allfile?$ allfile.php [NC,L]
+
+RewriteRule ^404?$ 404.php [NC,L]
+RewriteRule ^403?$ 403.php [NC,L]

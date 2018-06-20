@@ -13,7 +13,6 @@
     /*declare some varible*/
     $userdir ='./store/' . $_SESSION['username']; //used to know where to store file
     $name = $_SESSION['username']; //used to the message "Welcome $name"
-    $allowed_filetypes = array('.doc','.docx','.jpg','.jpeg','.png','.ppt','.pptx','.xls','.xlsx','.pdf','.txt','.zip','.rar'); //type of file
     $maxupload = "999"; //max file size
 
 
@@ -81,6 +80,7 @@
                                 <form method="post">
                                     <button class="btn btn-primary btn-lg" type="submit" name="test" id="test">Refresh</button>
                                 </form>
+                                <br />
                             </center>
                             <?php
                                 /*Check if the directory is empty or has file */
