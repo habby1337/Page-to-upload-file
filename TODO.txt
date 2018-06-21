@@ -1,0 +1,30 @@
+SO:
+
+----------------------------------
+ADD mean TO DO IT
+ADD! mean TO DO ABSOLUTLEY
+ADD? mean IF IS POSSIBLE ADD IT
+----------------------------------
+FIX mean REPAIR THE SHIT YOU DONE
+FIX! mean TO FIX ABSOLUTLEY THE SHIT YOU DONE
+FIX? mean IF IS POSSIBLE FIX THE SHIT YOU DONE 
+----------------------------------
+REM mean REMOVE THING
+REM! mean TO REMOVE ABSOLUTLEY
+REM? mean IF IS POSSIBLE REMOVE IT
+----------------------------------
+
+
+
+
+
+
+LIST TODO
+----------------------------------
+ADD change password
+ADD profile (stile tipo la card che fa da icon )
+FIX some issue around the page
+FIX? responsive
+REM delete shit in the store folder
+ADD? allfile navigation page 1; page 2; page 3;
+FIX! .htaccess problem /path redirect
