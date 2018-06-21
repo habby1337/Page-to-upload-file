@@ -84,12 +84,13 @@
                             </center>
                             <?php
                                 $countershowfile = 0; //Initialize the counter for the directory
+                                $countermaxshowfile = 4; //max file shown (add -1 like: 10 -> 9, 20 -> 19 etc..)
                                     /*Check if the directory is empty or has file */
                                     /*and if is not empty show the file inside*/
                                         if ($handle = opendir($userdir)) {
                                             while (false !== ($entry = readdir($handle))) {
                                                 if ($entry != "." && $entry != "..") {
-                                                    if ($countershowfile <= 10) {
+                                                    if ($countershowfile <= $countermaxshowfile) {
                                                         $countershowfile++;
                                                         echo "
                                                         <table class='table'>
@@ -101,6 +102,7 @@
                                                         </table>
                                                         ";
                                                     }
+
                                                 } elseif (is_dir_empty($userdir)) {
                                                     echo "Empty Folder ";
                                                     exit;
@@ -109,7 +111,7 @@
 
 
 
-
+                                            echo "5 item shown. for the whole list <a href='allfile'>click here</a>";
                                             closedir($handle);
                                         }
                                         /*function to know if the directory has file inside*/
