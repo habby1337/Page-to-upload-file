@@ -28,3 +28,4 @@ FIX? responsive
 REM delete shit in the store folder
 ADD? allfile navigation page 1; page 2; page 3;
 FIX! .htaccess problem /path redirect
+ez
