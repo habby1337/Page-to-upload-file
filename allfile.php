@@ -15,31 +15,46 @@ $userdir ='./store/' . $_SESSION['username']; //used to know where to store file
   <body>
   <?php include './include/header.php'; ?>
   <div class="container">
-          <div class="row">
-              <div class="col-8">
-</div>
+  <div class="col-lg-9">
+  
+
 <?php
                   /*Check if the directory is empty or has file */
                   /*and if is not empty show the file inside*/
+                  
                       if ($handle = opendir($userdir)) {
+                        $contatore = 0;
+                        echo '<div class="row">';
+                        
                           while (false !== ($entry = readdir($handle))) {
                               if ($entry != "." && $entry != "..") {
-                                  echo "
+                                  
+                                  $contatore = $contatore + 1;
+                                  echo '
+                                  
+     
+                                
+                                  
+                                  <div class="card" style="width: 10rem;">
+                                  <img class="card-img-top" src="'.$userdir.'/' .$entry .'" alt="Card image cap">
+                                  </div>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  
+                                  
 
-                                  <table class='table'>
-                                    <tbody>
-                                      <tr>
-                                        <th scope='row'>$entry\n</th>
-                                      </tr>
-                                    </tbody>
-                                  </table>
 
+                                  ';
+                                  if($contatore >= 4){
+                                    echo '</div>';
+                                    echo '<div class="row">';
+                                    $contatore = 0;
+                                  }
 
-                                  ";
                               } elseif (is_dir_empty($userdir)) {
                                   echo "Empty Folder ";
                                   exit;
                               }
+
                           }
 
 
@@ -58,6 +73,10 @@ $userdir ='./store/' . $_SESSION['username']; //used to know where to store file
 
 
                       ?>
+                      
+                      <!--</div>-->
+                     
+    </div>
 </div>
 
   <?php include "./include/foo.php" ?>

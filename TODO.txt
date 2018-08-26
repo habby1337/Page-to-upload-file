@@ -13,6 +13,7 @@ REM mean REMOVE THING
 REM! mean TO REMOVE ABSOLUTLEY
 REM? mean IF IS POSSIBLE REMOVE IT
 ----------------------------------
+DONE mean ALL GOOD
 
 
 
@@ -22,7 +23,9 @@ REM? mean IF IS POSSIBLE REMOVE IT
 LIST TODO
 ----------------------------------
 ADD guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e un numero
-ADD data registrazione
+-DONE data registrazione
+ADD possibilita di cancellare account
+ADD? pannello di controllo per amministratori
 ADD change password
 ADD profile (stile tipo la card che fa da icon )
 FIX some issue around the page

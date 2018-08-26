@@ -2,9 +2,14 @@
     // Include config file
     require_once 'config.php';
 
+
+    
     // Define variables and initialize with empty values
     $username = $password = $confirm_password = "";
     $username_err = $password_err = $confirm_password_err = "";
+
+    date_default_timezone_set('Europe/Rome');
+    $date = date('Y-m-d H:i:s', time());
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -67,11 +72,11 @@
         if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
             // Prepare an insert statement
-            $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+            $sql = "INSERT INTO users (username, password, created_at) VALUES (?, ?, ?)";
 
             if($stmt = $mysqli->prepare($sql)){
                 // Bind variables to the prepared statement as parameters
-                $stmt->bind_param("ss", $param_username, $param_password);
+                $stmt->bind_param("sss", $param_username, $param_password, $date);
 
                 // Set parameters
                 $param_username = $username;
