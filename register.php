@@ -1,3 +1,12 @@
+<style>
+.rosso{
+                
+     color: #FF1D15;
+ }
+.arancione{
+     color: #FF7F11;
+}
+</style>
 <?php
     // Include config file
     require_once 'config.php';
@@ -11,7 +20,7 @@
 
         // Validate username
         if(empty(trim($_POST["username"]))){
-            $username_err = "<a class='rosso'>Please enter a username.</a>";
+            $username_err = "Please enter a username.";
         } else{
             // Prepare a select statement
             $sql = "SELECT id FROM users WHERE username = ?";
@@ -32,12 +41,12 @@
 
 
                     if($stmt->num_rows == 1){
-                        $username_err = "<a class='rosso'>This username is already taken.</a>";
+                        $username_err = "This username is already taken.";
                     } else{
                         $username = trim($_POST["username"]);
                     }
                 } else{
-                    echo "<a class='rosso'>Oops! Something went wrong. Please try again later.</a>";
+                    echo "Oops! Something went wrong. Please try again later.";
                 }
             }
 
@@ -47,20 +56,20 @@
 
         // Validate password
         if(empty(trim($_POST['password']))){
-            $password_err = "<a class='rosso'>Please enter a password.</a>";
+            $password_err = "Please enter a password.";
         } elseif(strlen(trim($_POST['password'])) < 6){
-            $password_err = "<a class='rosso'>Password must have atleast 6 characters.</a>";
+            $password_err = "Password must have atleast 6 characters.";
         } else{
             $password = trim($_POST['password']);
         }
 
         // Validate confirm password
         if(empty(trim($_POST["confirm_password"]))){
-            $confirm_password_err = "<a class='rosso'>Please confirm password.</a>";
+            $confirm_password_err = "Please confirm password.";
         } else{
             $confirm_password = trim($_POST['confirm_password']);
             if($password != $confirm_password){
-                $confirm_password_err = "<a class='rosso'>Password did not match.</a>";
+                $confirm_password_err = "Password did not match.";
             }
         }
 
@@ -83,7 +92,7 @@
                     // Redirect to login page
                     header("location: login.php");
                 } else{
-                    echo "<a class='rosso'>Something went wrong. Please try again later.</a>";
+                    echo "Something went wrong. Please try again later.";
                 }
             }
 
@@ -107,12 +116,7 @@
             body{ font: 14px sans-serif; }
             .wrapper{ width: 350px; padding: 20px; }
 
-            .rosso{
-                color:#FF1D15;
-            }
-            .arancione{
-                color:#FF1D15;
-            }
+            
         </style>
     </head>
     <body>
@@ -126,7 +130,7 @@
                             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                                 <label>Username</label>
                                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
-                                <span class="help-block"><?php echo $username_err; ?></span>
+                                <span class="help-block rosso"><?php echo $username_err; ?></span>
                             </div>
                             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                 <label>Password</label>
@@ -136,7 +140,7 @@
                             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                                 <label>Confirm Password</label>
                                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                                <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                                <span class="help-block rosso"><?php echo $confirm_password_err; ?></span>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Submit">
