@@ -21,7 +21,8 @@ REM? mean IF IS POSSIBLE REMOVE IT
 
 LIST TODO
 ----------------------------------
-
+ADD guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e un numero
+ADD data registrazione
 ADD change password
 ADD profile (stile tipo la card che fa da icon )
 FIX some issue around the page
