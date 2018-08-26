@@ -1,12 +1,3 @@
-<style>
-.rosso{
-                
-     color: #FF1D15;
- }
-.arancione{
-     color: #FF7F11;
-}
-</style>
 <?php
     // Include config file
     require_once 'config.php';
@@ -115,7 +106,15 @@
         <style type="text/css">
             body{ font: 14px sans-serif; }
             .wrapper{ width: 350px; padding: 20px; }
-
+        
+        .rosso{
+                        
+             color: #FF1D15;
+         }
+        .arancione{
+             color: #FF7F11;
+        }
+        
             
         </style>
     </head>
