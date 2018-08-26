@@ -27,8 +27,7 @@
                 if($stmt->execute()){
                     // store result
                     $stmt->store_result();
-                    $userdir2 ='./store/' . $_POST["username"];
-                    mkdir($userdir2, 0777, true);
+                    
 
 
                     if($stmt->num_rows == 1){
@@ -77,11 +76,13 @@
                 // Set parameters
                 $param_username = $username;
                 $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-
+                //create the folder
+                $userdir2 ='./store/' . $_POST["username"];
+                    mkdir($userdir2, 0777, true);
                 // Attempt to execute the prepared statement
                 if($stmt->execute()){
                     // Redirect to login page
-                    header("location: login.php");
+                    header("location: login");
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }
