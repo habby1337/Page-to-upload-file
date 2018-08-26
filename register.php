@@ -134,7 +134,7 @@
                             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                                <span class="help-block"><?php echo $password_err; ?></span>
+                                <span class="help-block rosso"><?php echo $password_err; ?></span>
                             </div>
                             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                                 <label>Confirm Password</label>
