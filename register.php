@@ -11,7 +11,7 @@
 
         // Validate username
         if(empty(trim($_POST["username"]))){
-            $username_err = "Please enter a username.";
+            $username_err = "<a class='rosso'>Please enter a username.</a>";
         } else{
             // Prepare a select statement
             $sql = "SELECT id FROM users WHERE username = ?";
@@ -32,12 +32,12 @@
 
 
                     if($stmt->num_rows == 1){
-                        $username_err = "This username is already taken.";
+                        $username_err = "<a class='rosso'>This username is already taken.</a>";
                     } else{
                         $username = trim($_POST["username"]);
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo "<a class='rosso'>Oops! Something went wrong. Please try again later.</a>";
                 }
             }
 
@@ -47,20 +47,20 @@
 
         // Validate password
         if(empty(trim($_POST['password']))){
-            $password_err = "Please enter a password.";
+            $password_err = "<a class='rosso'>Please enter a password.</a>";
         } elseif(strlen(trim($_POST['password'])) < 6){
-            $password_err = "Password must have atleast 6 characters.";
+            $password_err = "<a class='rosso'>Password must have atleast 6 characters.</a>";
         } else{
             $password = trim($_POST['password']);
         }
 
         // Validate confirm password
         if(empty(trim($_POST["confirm_password"]))){
-            $confirm_password_err = 'Please confirm password.';
+            $confirm_password_err = "<a class='rosso'>Please confirm password.</a>";
         } else{
             $confirm_password = trim($_POST['confirm_password']);
             if($password != $confirm_password){
-                $confirm_password_err = 'Password did not match.';
+                $confirm_password_err = "<a class='rosso'>Password did not match.</a>";
             }
         }
 
@@ -83,7 +83,7 @@
                     // Redirect to login page
                     header("location: login.php");
                 } else{
-                    echo "Something went wrong. Please try again later.";
+                    echo "<a class='rosso'>Something went wrong. Please try again later.</a>";
                 }
             }
 
@@ -106,6 +106,13 @@
         <style type="text/css">
             body{ font: 14px sans-serif; }
             .wrapper{ width: 350px; padding: 20px; }
+
+            .rosso{
+                color:#FF1D15;
+            }
+            .arancione{
+                color:#FF1D15;
+            }
         </style>
     </head>
     <body>
