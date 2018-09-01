@@ -1,39 +1,39 @@
 SO:
 
-----------------------------------
-ADD mean TO DO IT
-ADD! mean TO DO ABSOLUTLEY
-ADD? mean IF IS POSSIBLE ADD IT
-----------------------------------
+
+**ADD** mean TO DO IT
+**ADD**! mean TO DO ABSOLUTLEY
+**ADD**? mean IF IS POSSIBLE ADD IT
+
 FIX mean REPAIR THE SHIT YOU DONE
 FIX! mean TO FIX ABSOLUTLEY THE SHIT YOU DONE
 FIX? mean IF IS POSSIBLE FIX THE SHIT YOU DONE 
-----------------------------------
+
 REM mean REMOVE THING
 REM! mean TO REMOVE ABSOLUTLEY
 REM? mean IF IS POSSIBLE REMOVE IT
-----------------------------------
+
 DONE mean ALL GOOD
 MODIFY mead modify
 
 
 
+======================================
 
 
+### LIST TODO
 
-LIST TODO
-----------------------------------
-ADD guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e un numero
--DONE data registrazione
-ADD possibilita di cancellare account
-ADD? pannello di controllo per amministratori
-MODIFY la preview fai con il container la page dove ci sono i nomi dei file e di lato a sinistra una piccola immagine del file selezionato
--DONE change password
-ADD profile (stile tipo la card che fa da icon )
-FIX some issue around the page
-FIX? responsive
-REM delete shit in the store folder
-ADD? allfile navigation page 1; page 2; page 3;
-FIX! .htaccess problem /path redirect
-ADD Admin Page to control all the accounts
--DONE Check if the account is enabled
++ **ADD** guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e un numero
++ -DONE data registrazione
++ **ADD** possibilita di cancellare account
++ **ADD**? pannello di controllo per amministratori
++ MODIFY la preview fai con il container la page dove ci sono i nomi dei file e di lato a sinistra una piccola immagine del file selezionato
++ -DONE change password
++ **ADD** profile (stile tipo la card che fa da icon )
++ FIX some issue around the page
++ FIX? responsive
++ REM delete shit in the store folder
++ **ADD**? allfile navigation page 1; page 2; page 3;
++ FIX! .htaccess problem /path redirect
++ **ADD** Admin Page to control all the accounts
++ -DONE Check if the account is enabled
