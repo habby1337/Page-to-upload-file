@@ -1,5 +1,8 @@
-SO:
+<dl>
 
+<dt>SO:</dt>
+<br>
+<dd>
 
 | **Word**      | **Meaning**                        |
 | ------------- |:----------------------------------:|
@@ -17,25 +20,39 @@ SO:
 |               |                                    |
 |DONE           |ALL GOOD                            |
 |MODIFY         |MODIFY IT                           |
+</dd>
+</dl>
 
-
-
-======================================
+___
 
 
 ### LIST TODO
 
-+ **ADD** guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e un numero
-+ -DONE data registrazione
-+ **ADD** possibilita di cancellare account
-+ **ADD**? pannello di controllo per amministratori
-+ MODIFY la preview fai con il container la page dove ci sono i nomi dei file e di lato a sinistra una piccola immagine del file selezionato
-+ -DONE change password
-+ **ADD** profile (stile tipo la card che fa da icon )
-+ FIX some issue around the page
-+ FIX? responsive
-+ REM delete shit in the store folder
-+ **ADD**? allfile navigation page 1; page 2; page 3;
-+ FIX! .htaccess problem /path redirect
-+ **ADD** Admin Page to control all the accounts
-+ -DONE Check if the account is enabled
++ ➕ **ADD** guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e un numero
+  
++ ✅ **DONE** data registrazione
+  
++ ➕ **ADD** possibilita di cancellare account
+  
++ ➕ **ADD?** pannello di controllo per amministratori
+  
++ 🔧 **MODIFY** la preview fai con il container la page dove ci sono i nomi dei file e di lato a sinistra una piccola immagine del file selezionato
+
++ ✅ **DONE** change password
+
++ ➕ **ADD** profile (stile tipo la card che fa da icon )
+
++ 🔨 **FIX** some issue around the page
+
++ 🔨 **FIX?** responsive
+
++ ❌ **REM** delete shit in the store folder
+
++ ➕ **ADD**? allfile navigation page 1; page 2; page 3;
+
++ 🔨 **FIX!** .htaccess problem /path redirect
+
++ ➕ **ADD** Admin Page to control all the accounts
+
++ ✅ **DONE** Check if the account is enabled
+
