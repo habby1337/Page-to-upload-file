@@ -28,7 +28,7 @@ ADD guardate il tipo di pw inserita e dire che deve aggiungere una maiuscola e u
 ADD possibilita di cancellare account
 ADD? pannello di controllo per amministratori
 MODIFY la preview fai con il container la page dove ci sono i nomi dei file e di lato a sinistra una piccola immagine del file selezionato
-ADD change password
+-DONE change password
 ADD profile (stile tipo la card che fa da icon )
 FIX some issue around the page
 FIX? responsive

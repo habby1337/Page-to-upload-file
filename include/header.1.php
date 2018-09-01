@@ -19,7 +19,7 @@
                   <i class="fas fa-users-cog fa-2x"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="./logout"><i class="fas fa-power-off"></i> Esci</a>
+                  <a class="dropdown-item" href="../logout"><i class="fas fa-power-off"></i> Esci</a>
                   <a class="dropdown-item disabled" href="./change/password"><i class="fas fa-key"></i> Cambia password (WIP)</a>
                   <a class="dropdown-item disabled" href="#"><i class="fas fa-address-card"></i> Profilo (WIP)</a>
                   <div class="dropdown-divider"></div>

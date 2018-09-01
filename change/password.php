@@ -18,7 +18,7 @@
 
      // Define variables and initialize with empty values
      $curpassword = $newpassword = $confnewpassword = "";
-     $curpassword_err = $newpassword_err = $confnewpassword_err = $login_err ="";
+     $curpassword_err = $newpassword_err = $confnewpassword_err = $login_err = $message_log ="";
 
    // Processing form data when form is submitted
    if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -48,6 +48,7 @@
     }
        }
 
+       if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         //confronto le password
         if($newpassword != $confnewpassword){
@@ -97,10 +98,12 @@
                                 if(mysqli_query($mysqli, $query)) {
                                    
                                     echo "Successfully inserted " . mysqli_affected_rows($mysqli) . " row";
+                                    $message_log = "Password cambiata con successo!";
                                    
                                     } else {
                                   
                                     echo "Error occurred: " . mysqli_error($mysqli);
+                                    $message_log = "Password non cambiata, riprovare più tardi";
                                  
                                     }
                                
@@ -128,20 +131,23 @@
 
 
     }
-       echo "Errore:";
-       print ($login_err);
+}
+
+        //alcuni log
+       echo "Errore: ";
+       print ($login_err) . " ";
        echo "<br>"; 
-       echo "Current user:";
-       print ($username);
+       echo "Current user: ";
+       print ($username). " ";
        echo "<br>";
-       echo "curpassword:";
-       print ($curpassword);
+       echo "curpassword: ";
+       print ($curpassword). " ";
        echo "<br>";
-       echo "newpassword:";
-       print ($newpassword);
+       echo "newpassword: ";
+       print ($newpassword). " ";
        echo "<br>";
-       echo "confnewpassword:";
-       print ($confnewpassword);
+       echo "confnewpassword: ";
+       print ($confnewpassword). " ";
 ?>
 
     <!DOCTYPE html>
@@ -161,6 +167,7 @@
 <div class="container">
 <form method="post">
   <div class="form-group">
+  <h1><?php print($message_log);?></h1>
     <label for="currpw">Current Password</label>
     <input type="text" name="currpw" class="form-control" value="<?php echo $curpassword; ?>"  placeholder="Current Password">
     <span class="help-block rosso"><?php echo $curpassword_err; ?></span>
