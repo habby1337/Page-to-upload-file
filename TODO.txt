@@ -35,3 +35,5 @@ FIX? responsive
 REM delete shit in the store folder
 ADD? allfile navigation page 1; page 2; page 3;
 FIX! .htaccess problem /path redirect
+ADD Admin Page to control all the accounts
+-DONE Check if the account is enabled

@@ -4,7 +4,7 @@
 
     // Define variables and initialize with empty values
     $username = $password = "";
-    $username_err = $password_err =  "";
+    $username_err = $password_err = $enable_err ="";
 
 
     // Processing form data when form is submitted
@@ -33,7 +33,7 @@
         // Validate credentials
         if(empty($username_err) && empty($password_err)){
             // Prepare a select statement
-            $sql = "SELECT username, password FROM users WHERE username = ?";
+            $sql = "SELECT username, password, enable FROM users WHERE username = ?";
 
             if($stmt = $mysqli->prepare($sql)){
                 // Bind variables to the prepared statement as parameters
@@ -54,14 +54,18 @@
                     // Check if username exists, if yes then verify password
                     if($stmt->num_rows == 1){
                         // Bind result variables
-                        $stmt->bind_result($username, $hashed_password);
+                        $stmt->bind_result($username, $hashed_password, $enable);
                         if($stmt->fetch()){
                             if(password_verify($password, $hashed_password)){
+                                if($enable != 1){
+                                    $enable_err = "Il tuo account non è abilitato";
+                                }else{
                                 /* Password is correct, so start a new session and
                                 save the username to the session */
                                 session_start();
                                 $_SESSION['username'] = $username;
                                 header("location: welcome.php");
+                            }
                             } else{
                                 // Display an error message if password is not valid
                                 $password_err = 'The password you entered was not valid.';
@@ -110,6 +114,7 @@
                     <div class="jumbotron">
                         <h2>Login</h2>
                         <p>Please fill in your credentials to login.</p>
+                        <h1><?php print($enable_err); ?></h1>
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                                 <label>Username</label>
