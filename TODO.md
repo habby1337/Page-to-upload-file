@@ -1,20 +1,22 @@
 SO:
 
 
-**ADD** mean TO DO IT
-**ADD**! mean TO DO ABSOLUTLEY
-**ADD**? mean IF IS POSSIBLE ADD IT
-
-FIX mean REPAIR THE SHIT YOU DONE
-FIX! mean TO FIX ABSOLUTLEY THE SHIT YOU DONE
-FIX? mean IF IS POSSIBLE FIX THE SHIT YOU DONE 
-
-REM mean REMOVE THING
-REM! mean TO REMOVE ABSOLUTLEY
-REM? mean IF IS POSSIBLE REMOVE IT
-
-DONE mean ALL GOOD
-MODIFY mead modify
+| **Word**      | **Meaning**                        |
+| ------------- |:----------------------------------:|
+| ADD           | TO DO IT                           |
+| ADD!          | TO DO ABSOLUTLEY                   |
+| ADD?          | IF IS POSSIBLE ADD IT              |
+|               |                                    |
+|FIX            |REPAIR THE SHIT YOU DONE            |
+|FIX!           |TO FIX ABSOLUTLEY THE SHIT YOU DONE |
+|FIX?           |IF IS POSSIBLE FIX THE SHIT YOU DONE|
+|               |                                    |
+|REM            |REMOVE THING                        |
+|REM!           |TO REMOVE ABSOLUTLEY                |
+|REM?           |IF IS POSSIBLE REMOVE IT            |
+|               |                                    |
+|DONE           |ALL GOOD                            |
+|MODIFY         |MODIFY IT                           |
 
 
 
